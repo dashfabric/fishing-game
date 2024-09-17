@@ -1,0 +1,45 @@
+let score = 0;
+let timer = 60;
+let intervalId;
+const scoreDisplay = document.getElementById('score');
+const timerDisplay = document.getElementById('timer');
+const fishContainer = document.getElementById('fish-container');
+const startButton = document.getElementById('start-button');
+
+function startGame() {
+    score = 0;
+    timer = 60;
+    scoreDisplay.textContent = `امتیاز: ${score}`;
+    timerDisplay.textContent = `زمان باقی‌مانده: ${timer}`;
+    fishContainer.innerHTML = '';
+    startButton.disabled = true;
+
+    intervalId = setInterval(() => {
+        timer--;
+        timerDisplay.textContent = `زمان باقی‌مانده: ${timer}`;
+        if (timer <= 0) {
+            clearInterval(intervalId);
+            startButton.disabled = false;
+        }
+    }, 1000);
+
+    generateFish();
+}
+
+function generateFish() {
+    fishContainer.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+        const fish = document.createElement('div');
+        fish.classList.add('fish');
+        fish.style.top = `${Math.random() * 370}px`;
+        fish.style.left = `${Math.random() * 550}px`;
+        fish.addEventListener('click', () => {
+            score += 10;
+            scoreDisplay.textContent = `امتیاز: ${score}`;
+            fish.remove();
+        });
+        fishContainer.appendChild(fish);
+    }
+}
+
+startButton.addEventListener('click', startGame);
