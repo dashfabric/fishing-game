@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a2c2e1;
+}
+
+#game-container {
+    text-align: center;
+    position: relative;
+}
+
+#fish-container {
+    width: 600px;
+    height: 400px;
+    background-image: url('sea_background.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.fish {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-image: url('fish.png');
+    background-size: cover;
+    cursor: pointer;
+}

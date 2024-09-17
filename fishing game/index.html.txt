@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی ماهیگیری ساده</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>بازی ماهیگیری</h1>
+        <div id="score">امتیاز: 0</div>
+        <div id="timer">زمان باقی‌مانده: 60</div>
+        <div id="fish-container"></div>
+        <button id="start-button">شروع بازی</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
